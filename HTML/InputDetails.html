@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InputDetails</title>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/InputDetails.css"/>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/WebBase.css"/>
+<script src="script/jquery-3.6.0.min.js"></script>
+<script id="applicationScript" type="text/javascript" src="script/InputDetails.js"></script>
+</head>
+<body>
+<div id="BaseBody">
+	<div id="Scroll_Group_2_">
+		<form id="Form">
+			<div id="Form_ba">		
+
+				<div id="Sender" class="TextInput">
+					<div id="InputTitle">
+						<label for="SenderName">Sender:</label><br>
+					</div>
+					<svg class="InputRect">
+						<rect id="InputRect">
+						</rect>
+					</svg>
+					<input type="text" id="InputBox" name="SenderName" placeholder="Fill in here">
+				</div>
+				
+				<div id="SenderMail" class="TextInput">
+					<div id="InputTitle">
+						<label for="SenderMail">Sender's Mail:</label><br>
+					</div>
+					<svg class="InputRect">
+						<rect id="InputRect">
+						</rect>
+					</svg>
+					<input type="text" id="InputBox" name="SenderMail" placeholder="Fill in here">
+				</div>
+				<div id="Recipient" class="TextInput">
+					<div id="InputTitle">
+						<label for="RecipientName">Recipient:</label><br>
+					</div>
+					<svg class="InputRect">
+						<rect id="InputRect">
+						</rect>
+					</svg>
+					<input type="text" id="InputBox" name="RecipientName" placeholder="Fill in here">
+				</div>
+				<div id="RecipientMail" class="TextInput">
+					<div id="InputTitle">
+						<label for="RecipientMail">Recipient's Mail:</label><br>
+					</div>
+					<svg class="InputRect">
+						<rect id="InputRect">
+						</rect>
+					</svg>
+					<input type="text" id="InputBox" name="RecipientMail" placeholder="Fill in here">
+				</div>
+				<div id="Photo" class="TextInput">
+					<div id="InputTitle" >
+						<label for="SenderPhoto">Sender's Photo:</label><br>
+					</div>
+					<!--<svg class="InputRect"> 
+						<rect id="InputRect">
+						</rect>
+					</svg>--->
+					<input type="file" onchange="application.uploadFiles(event)" accept="image/gif, image/jpeg, image/png" id="InputBox" name="SenderPhoto" placeholder="Fill in here">
+				</div>
+				
+
+				<div id="Greetings">
+					<div id="GreetingsInputTitle">
+						<label for="GreetingMessage">Greeting Message:</label>
+					</div>
+					<svg class="GreetingsInputRect">
+						<rect id="GreetingsInputRect" >
+						</rect>
+					</svg>
+					<input type="textarea" id="GreetingsInputBox" name="GreetingMessage" placeholder="Fill in here">
+					
+					<div  id="Submit" onclick="application.goToTargetView(event)">
+
+						<svg class="SubmitRect">
+							<rect id="SubmitRect" >
+							</rect>
+						</svg>
+						<div id="Submit_BtnText">
+							Submit
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</form>
+	</div>
+	<div id="FooterGroup" class="FooterGroup">
+		<svg class="FooterImage">
+			<rect id="FooterImage" rx="0" ry="0" x="0" y="0" width="1920" height="200">
+			</rect>
+		</svg>
+		<img id="download" src="images/download.png" srcset="images/download.png 1x, images/download@2x.png 2x">
+			
+	</div>
+	<div id="Header" class="Header">
+		<svg class="HeaderImage">
+			<rect id="HeaderImage" rx="0" ry="0" x="0" y="0" width="1920" height="200">
+			</rect>
+		</svg>
+		<div id="E_cards_Portal_Title">
+			E cards Portal
+		</div>
+		<div id="E_cards_Portal_SubHeader">
+			Input Details
+		</div>
+	</div>
+</div>
+</body>
+</html>

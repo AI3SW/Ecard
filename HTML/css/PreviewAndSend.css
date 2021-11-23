@@ -1,0 +1,104 @@
+.mediaViewInfo {
+	--web-view-name: PreviewAndSend;
+	--web-view-id: PreviewAndSend;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: PreviewAndSend;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#PreviewAndSend {
+	position: absolute;
+	width: 1920px;
+	height: 1082px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: PreviewAndSend;
+	--web-view-id: PreviewAndSend;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#Scroll_Group_2_cf {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 891px;
+	height: 680px;
+	left: 515px;
+	top: 200px;
+	overflow: hidden;
+}
+#Group_cg {
+	position: absolute;
+	width: 891px;
+	height: 614px;
+	left: 0px;
+	top: 38px;
+	overflow: visible;
+}
+#unnamed_1 {
+	position: absolute;
+	width: 891px;
+	height: 520px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Submit_ci {
+	position: absolute;
+	width: 181px;
+	height: 67px;
+	left: 355px;
+	top: 547px;
+	overflow: visible;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: HomePage.html;
+	cursor: pointer;
+}
+#Rectangle_4_cj {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_4_cj {
+	position: absolute;
+	overflow: visible;
+	width: 181px;
+	height: 67px;
+	left: 0px;
+	top: 0px;
+}
+#Back_to_Menu {
+	left: 30px;
+	top: 20px;
+	position: absolute;
+	overflow: visible;
+	width: 122px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(0,0,0,0.98);
+}
