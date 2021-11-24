@@ -100,7 +100,7 @@ $(document).ready(function(){
 		var ImageAPI = "http://10.2.1.153:5001/image";
 		
 		var file = document.querySelector('input[type=file]').files[0];  // File refrence
-
+		
 		var reader = new FileReader(); // Creating reader instance from FileReader() API
 
 		reader.addEventListener("load", function () { // Setting up base64 URL on image
@@ -120,14 +120,14 @@ $(document).ready(function(){
 				url: ImageAPI,
 				dataType: 'json',
 				type: 'POST',
+				contentType: 'application/json',
 				header: {
-					'Content-Type':'application/json',
 					'Content-Length': dataLength
 				},
 				data: jsonString,
 				processData: false,
 				success: function( receiveddata, textStatus, jQxhr ){
-					console.log('status: ' + status + ', data: ' + data);
+					console.log('status: ' + status + ', data: ' + receiveddata);
 					
 					var Badresponse = false;
 					var responseMessage;
@@ -163,7 +163,9 @@ $(document).ready(function(){
 					"json");
 							*/
 		}, false);
-
+        reader.addEventListener('error', () => {
+            console.error(`Error occurred reading file: ${file.name}`);
+        });
 		reader.readAsDataURL(file); // Converting file into data URL
 	}
 
@@ -2438,8 +2440,8 @@ $(document).ready(function(){
 			url: EmailAPI,
 			dataType: 'json',
 			type: 'POST',
+			contentType: 'application/json',
 			header: {
-				'Content-Type':'application/json',
 				'Content-Length': dataLength
 			},
 			data: dataObj,
