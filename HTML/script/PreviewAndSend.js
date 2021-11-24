@@ -83,6 +83,12 @@ var Application = function() {
 	this.refreshCheckContent = false;
 	this.refreshCheckContentSize = false;
 
+
+$(document).ready(function(){
+	var EcardImgstr = sessionStorage.getItem('PersonalizedEcard');
+	$('#Scroll_Group_2_').append('<img id="EcardPreview" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
+});
+
 	var self = this;
 
 	self.initialize = function(event) {

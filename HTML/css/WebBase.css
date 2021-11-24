@@ -84,7 +84,7 @@
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 50px;
+	font-size: 4vw;
 	color: rgba(255,255,255,1);
 }
 #E_cards_Portal_SubHeader {
@@ -100,6 +100,6 @@
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 2vw;
 	color: rgba(242,18,18,1);
 }

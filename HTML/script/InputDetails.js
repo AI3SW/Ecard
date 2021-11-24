@@ -89,7 +89,7 @@ var Application = function() {
 $(document).ready(function(){
 	
 	var EcardId = sessionStorage.getItem('SelectedEcardID');
-	//console.log(EcardId);
+	console.log(EcardId);
 	var EcardImgstr = sessionStorage.getItem('SelectedEcardImgstr');
 	//console.log(EcardImgstr);
 	$('#Scroll_Group_2_').append('<img id="EcardTemplate" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
@@ -107,15 +107,63 @@ $(document).ready(function(){
 			//preview.src = reader.result;
 			//this.Imgstr = reader.result;
 			//console.log(reader.result);
-			var EcardId = sessionStorage.getItem('SelectedEcardID') +1;
+			var EcardId = parseInt(sessionStorage.getItem('SelectedEcardID'))+1;
+
+			var stringData = reader.result.split(",");
+			console.log(stringData);
+			//const obj = {name: "John", age: 30, city: "New York"};
+			var jsonString = { card_id : EcardId , img: stringData[1]};
+			console.log(jsonString);
+			var dataLength = JSON.stringify(jsonString).length;
+			
+			$.ajax({
+				url: ImageAPI,
+				dataType: 'json',
+				type: 'POST',
+				header: {
+					'Content-Type':'application/json',
+					'Content-Length': dataLength
+				},
+				data: jsonString,
+				processData: false,
+				success: function( receiveddata, textStatus, jQxhr ){
+					console.log('status: ' + status + ', data: ' + data);
+					
+					var Badresponse = false;
+					var responseMessage;
+					$.each( receiveddata, function( key, val ) {
+						if(key == "error") {
+							Badresponse = true;
+							responseMessage = val;
+						} else {
+							sessionStorage.setItem("PersonalizedEcard", val);
+						}
+					});
+
+					if(Badresponse) {
+						console.log(responseMessage);
+					}
+
+					
+				},
+				error: function( jqXhr, textStatus, errorThrown ){
+					console.log( errorThrown );
+				}
+			})
+			
+			
+			
+			
+			/*
 			$.post( ImageAPI,   // url
-				   { img: reader.result,id : EcardId }, // data to be submit
+				   jsonString, // data to be submit
 				   function(data, status, jqXHR) {// success callback
 						console.log('status: ' + status + ', data: ' + data);
 					},
 					"json");
+							*/
 		}, false);
-		
+
 		reader.readAsDataURL(file); // Converting file into data URL
 	}
 
@@ -2355,16 +2403,56 @@ $(document).ready(function(){
 		var targetState = targetView ? self.getStateNameByViewId(targetView.id) : null;
 		var actionTargetStyles = targetView ? targetView.style : null;
 		var state = self.viewsDictionary[actionTargetValue];
-		console.log(  $("#Form").serialize());
 		
+		var formdata = $("#Form").serializeArray();
+
+		var dataObj = {};
+		var jsonstring = "{";
+		
+		var invalidatedForm = false;
+		$(formdata).each(function(i, field){
+			if(invalidatedForm ||!field.value || /^\s*$/.test(field.value)) {
+				invalidatedForm = true;
+				
+			}
+			jsonstring += "\""+field.name +"\": \""+field.value + "\"";
+			//console.log(i + " " +  formdata.length);
+			if(i < formdata.length -1)	jsonstring += ",";
+		  //dataObj[field.name] = field.value;
+		});
+
+		
+		
+		jsonstring += "}";
+		console.log(jsonstring);
+		if(invalidatedForm) {
+				alert("Please fill in all the fields");
+				return;
+		}
+		
+		var dataLength = JSON.stringify(dataObj).length;
 		//$("#Form").submit();
-		var cardsAPI = "http://10.2.1.153:5001/cards";
-		$.post('/submitJSONData',  // url
-       { myData: 'This is my data.' }, // data to be submit
-       function(data, status, xhr) {   // success callback function
-                alert('status: ' + status + ', data: ' + data.responseData);
-            },
-       'json');
+		var EmailAPI = "http://10.2.1.153:5001/email";
+	   
+		$.ajax({
+			url: EmailAPI,
+			dataType: 'json',
+			type: 'POST',
+			header: {
+				'Content-Type':'application/json',
+				'Content-Length': dataLength
+			},
+			data: dataObj,
+			processData: false,
+			success: function( data, textStatus, jQxhr ){
+				console.log('status: ' + status + ', data: ' + data);
+			},
+			error: function( jqXhr, textStatus, errorThrown ){
+				console.log( errorThrown );
+			}
+		});
+	   
+	   
 		// navigate to page
 		//console.log( $( this ).serializeArray() );
 		if (self.application==false || targetType=="page") {

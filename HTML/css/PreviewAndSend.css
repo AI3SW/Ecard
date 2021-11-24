@@ -37,34 +37,38 @@
 #Scroll_Group_2_cf {
 	mix-blend-mode: normal;
 	position: absolute;
-	width: 891px;
-	height: 680px;
-	left: 515px;
-	top: 200px;
+	width: 100%;
+	height: 70%;
+	top : 15%;
+
 	overflow: hidden;
 }
 #Group_cg {
 	position: absolute;
-	width: 891px;
-	height: 614px;
-	left: 0px;
-	top: 38px;
+	width: 100%;
+	height: 100%;
+
 	overflow: visible;
+
 }
-#unnamed_1 {
-	position: absolute;
-	width: 891px;
-	height: 520px;
-	left: 0px;
-	top: 0px;
+#PreviewImage {
+	display: flex;
+	width: auto;
+	height: 55vh;
 	overflow: visible;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom : 2vh;
 }
 #Submit_ci {
-	position: absolute;
-	width: 181px;
-	height: 67px;
-	left: 355px;
-	top: 547px;
+
+	display: block;
+	width: 15vw;
+	height: 10v;
+	margin-left: auto;
+	margin-right: auto;
+	bottom : 30px;
+
 	overflow: visible;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
@@ -72,6 +76,13 @@
 	cursor: pointer;
 }
 #Rectangle_4_cj {
+		position : absolute;
+		width:inherit;
+		height:inherit;
+	max-height: 150px;
+max-width: 150px;
+		margin-left: auto;
+	margin-right: auto;
 	fill: rgba(255,255,255,1);
 	stroke: rgba(112,112,112,1);
 	stroke-width: 1px;
@@ -79,26 +90,61 @@
 	stroke-linecap: butt;
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
+	rx : 25px;
+	ry : 25px;
+
+
+
+
 }
+
 .Rectangle_4_cj {
 	position: absolute;
-	overflow: visible;
-	width: 181px;
-	height: 67px;
-	left: 0px;
-	top: 0px;
+
+	width:15vw;
+	height:6vh;
+	margin-left: auto;
+	margin-right: auto;
+	
 }
 #Back_to_Menu {
-	left: 30px;
-	top: 20px;
+	width:inherit;
+		height:inherit;
+		margin-left: auto;
+	margin-right: auto;
 	position: absolute;
 	overflow: visible;
-	width: 122px;
+
 	white-space: nowrap;
-	text-align: left;
+	text-align: center;
+		vertical-align : center;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20px;
+	font-size: auto;
 	color: rgba(0,0,0,0.98);
+	font-size : 1vw;
+	padding :  1.5vh 0 ;
+
+}
+#Reminder {
+		position: absolute;
+	width: 100%;
+	bottom : 0vh;
+	height: 5vh;
+	margin-left: auto;
+	margin-right: auto;
+
+	overflow: visible;
+
+	white-space: nowrap;
+	text-align: center;
+	vertical-align : center;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: auto;
+	color: rgba(0,0,0,0.98);
+	font-size : 1vw;
+
 }

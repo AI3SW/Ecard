@@ -96,25 +96,26 @@
 	position: absolute;
 	overflow: visible;
 	width: 50%;
-	white-space: nowrap;
+word-wrap: break-word;
 	text-align: left;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 60px;
+	font-size: 3.4vw;
 	color: rgba(0,0,0,1);
 }
 #LoremIpsumLoremIpsumLorem_Ipsu {
 	right:  5%;
-	top: 200px;
+	top: 30vh;
+	width: 45%;
 	position: absolute;
 	overflow: visible;
-	width: 35%;
-	white-space: nowrap;
-	text-align: left;
+
+word-wrap: break-word;
+	text-align: right;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 40px;
+	font-size: 2vw;
 	color: rgba(112,112,112,1);
 }
