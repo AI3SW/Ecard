@@ -112,7 +112,7 @@ $(document).ready(function(){
 			var stringData = reader.result.split(",");
 			console.log(stringData);
 			//const obj = {name: "John", age: 30, city: "New York"};
-			var jsonString = { card_id : EcardId , img: stringData[1]};
+			var jsonString = "{ \"card_id\" : \""+EcardId+"\" , \"img\": \""+stringData[1]+"\"}";
 			console.log(jsonString);
 			var dataLength = JSON.stringify(jsonString).length;
 			
@@ -132,6 +132,7 @@ $(document).ready(function(){
 					var Badresponse = false;
 					var responseMessage;
 					$.each( receiveddata, function( key, val ) {
+						//console.log(key +" , "+ val);
 						if(key == "error") {
 							Badresponse = true;
 							responseMessage = val;
