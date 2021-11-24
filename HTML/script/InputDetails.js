@@ -113,7 +113,7 @@ $(document).ready(function(){
 			console.log(stringData);
 			//const obj = {name: "John", age: 30, city: "New York"};
 			var jsonString = "{ \"card_id\" : \""+EcardId+"\" , \"img\": \""+stringData[1]+"\"}";
-			console.log(jsonString);
+			//console.log(jsonString);
 			var dataLength = JSON.stringify(jsonString).length;
 			
 			$.ajax({
@@ -132,12 +132,13 @@ $(document).ready(function(){
 					var Badresponse = false;
 					var responseMessage;
 					$.each( receiveddata, function( key, val ) {
-						//console.log(key +" , "+ val);
+						console.log(key +" , "+ val);
 						if(key == "error") {
 							Badresponse = true;
 							responseMessage = val;
 						} else {
 							sessionStorage.setItem("PersonalizedEcard", val);
+							console.log("saving image");
 						}
 					});
 
@@ -2409,7 +2410,6 @@ $(document).ready(function(){
 		
 		var formdata = $("#Form").serializeArray();
 
-		var dataObj = {};
 		var jsonstring = "{";
 		
 		var invalidatedForm = false;
@@ -2427,13 +2427,14 @@ $(document).ready(function(){
 		
 		
 		jsonstring += "}";
-		console.log(jsonstring);
+
 		if(invalidatedForm) {
 				alert("Please fill in all the fields");
 				return;
 		}
 		
-		var dataLength = JSON.stringify(dataObj).length;
+		var dataLength = JSON.stringify(jsonstring).length;
+		console.log(jsonstring);
 		//$("#Form").submit();
 		var EmailAPI = "http://10.2.1.153:5001/email";
 	   
@@ -2445,10 +2446,10 @@ $(document).ready(function(){
 			header: {
 				'Content-Length': dataLength
 			},
-			data: dataObj,
+			data: jsonstring,
 			processData: false,
 			success: function( data, textStatus, jQxhr ){
-				console.log('status: ' + status + ', data: ' + data);
+				console.log('status: ' + status + ', data: ' + data.success);
 			},
 			error: function( jqXhr, textStatus, errorThrown ){
 				console.log( errorThrown );
@@ -2459,7 +2460,7 @@ $(document).ready(function(){
 		// navigate to page
 		//console.log( $( this ).serializeArray() );
 		if (self.application==false || targetType=="page") {
-			// document.location.href = "./" + actionTargetValue;
+			document.location.href = "./" + actionTargetValue;
 			return;
 		}
 
