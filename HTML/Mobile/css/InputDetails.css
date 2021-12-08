@@ -1,0 +1,298 @@
+.mediaViewInfo {
+	--web-view-name: InputDetails;
+	--web-view-id: InputDetails;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: InputDetails;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#InputDetails {
+	position: absolute;
+	width: 1920px;
+	height: 1082px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: InputDetails;
+	--web-view-id: InputDetails;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#Scroll_Group_2_ {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 100vw;
+	height: 70vh;
+	left: 0;
+	top: 15%;
+	overflow: hidden;
+
+}
+#Form {
+	position: absolute;
+	width: 50vw;
+	height: 70vh;
+	left: 50vw;
+	top: 10px;
+	overflow: visible;
+}
+#Form_ba {
+	position: absolute;
+	width: 50vw;
+	height: 70vh;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#EcardTemplate {
+	display: block;
+	width: 50vw;
+	height: auto;
+
+	overflow: visible;
+	display: block;
+}
+#GreetingMessage {
+	position: absolute;
+	width: 781px;
+	height: 330px;
+	left: 778px;
+	top: 260px;
+	overflow: visible;
+}
+#Rectangle_4 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_4 {
+	position: absolute;
+	overflow: visible;
+	width: 781px;
+	height: 289px;
+	left: 0px;
+	top: 41px;
+}
+
+#Submit {
+	position: absolute;
+	height: 5vw;
+	width: 5vw;
+	overflow: visible;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: PreviewAndSend.html;
+	cursor: pointer;
+
+	right: -2.5vw;
+	bottom: -3vh;
+}
+#SubmitRect {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+	rx : 25px;
+	ry : 25px;
+	position : absolute;
+	width:inherit;
+	height:inherit;
+
+max-height: 150px;
+max-width: 150px;
+}
+.SubmitRect {
+	position: absolute;
+	overflow: visible;
+	width:inherit;
+	height:inherit;
+
+}
+#Submit_BtnText {
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	overflow: visible;
+	width:inherit;
+	padding: 35% 0px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: auto;
+	color: rgba(0,0,0,0.98);
+	text-align : center;
+	vertical-align : center;
+	width:inherit;
+	height:inherit;
+}
+
+.TextInput{
+	position: absolute;
+	width: 15vw;
+	height: 12vh;
+	overflow: visible;
+}
+#Sender {
+
+	left: 0;
+	top: 0vh;
+	margin-left: 1vw;
+
+}
+#SenderMail {
+	left: 20vw;
+	top: 0vh;
+		margin-left: 1vw;
+
+}
+#Recipient {
+	left: 0;
+	top: 15vh;
+		margin-left: 1vw;
+
+}
+#RecipientMail {
+	left: 20vw;
+	top: 15vh;
+		margin-left: 1vw;
+
+}
+#Photo {
+	left: 20vw;
+	top: 30vh;
+		margin-left: 1vw;
+
+}
+
+#InputBox {
+	position: absolute;
+	width: 90%;
+	height: 40%;
+	left: 5%;
+	bottom: 5%;
+	overflow: visible;
+	font-size: 0.9vw;
+}
+#InputRect {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 0.05vw;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	rx:25;
+	ry:25;
+
+}
+.InputRect {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	height: 50%;
+	left: 0px;
+	bottom: 0px;
+}
+#InputTitle {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.5vw;
+	color: rgba(0,0,0,0.98);
+	width: 50%;
+	height: 40%;
+}
+#Greetings {
+	left: 0;
+	top: 40vh;
+	position: absolute;
+	width: 40vw;
+	height: 24vh;
+	overflow: visible;
+	margin-left: 1vw;
+}
+#GreetingsInputBox {
+	position: absolute;
+	width: 93%;
+	height: 65%;
+	left: 3%;
+	bottom: 3%;
+	overflow: visible;
+}
+#GreetingsInputRect {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	rx:25;
+	ry:25;
+
+}
+.GreetingsInputRect {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	height: 70%;
+	left: 0px;
+	bottom: 0px;
+	 vertical-align: top;
+}
+#GreetingsInputTitle {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.5vw;
+	color: rgba(0,0,0,0.98);
+	width: 50%;
+	height: 15%;
+}

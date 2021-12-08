@@ -90,86 +90,10 @@ $(document).ready(function(){
 	
 	var EcardId = sessionStorage.getItem('SelectedEcardID');
 	console.log(EcardId);
-	var EcardImgstr = sessionStorage.getItem('SelectedEcardImgstr');
+	var EcardImgstr = sessionStorage.getItem('PersonalizedEcard');
 	//console.log(EcardImgstr);
 	$('#Scroll_Group_2_').append('<img id="EcardTemplate" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
 });
-
-	self.uploadFiles = function(event) {
-		//var preview = document.querySelector('#InputBox'); // Image reference
-		var ImageAPI = "http://10.2.1.153:5001/image";
-		
-		var file = document.querySelector('input[type=file]').files[0];  // File refrence
-		
-		var reader = new FileReader(); // Creating reader instance from FileReader() API
-
-		reader.addEventListener("load", function () { // Setting up base64 URL on image
-			//preview.src = reader.result;
-			//this.Imgstr = reader.result;
-			//console.log(reader.result);
-			var EcardId = parseInt(sessionStorage.getItem('SelectedEcardID'))+1;
-
-			var stringData = reader.result.split(",");
-			console.log(stringData);
-			//const obj = {name: "John", age: 30, city: "New York"};
-			var jsonString = "{ \"card_id\" : \""+EcardId+"\" , \"img\": \""+stringData[1]+"\"}";
-			//console.log(jsonString);
-			var dataLength = JSON.stringify(jsonString).length;
-			
-			$.ajax({
-				url: ImageAPI,
-				dataType: 'json',
-				type: 'POST',
-				contentType: 'application/json',
-				header: {
-					'Content-Length': dataLength
-				},
-				data: jsonString,
-				processData: false,
-				success: function( receiveddata, textStatus, jQxhr ){
-					console.log('status: ' + status + ', data: ' + receiveddata);
-					
-					var Badresponse = false;
-					var responseMessage;
-					$.each( receiveddata, function( key, val ) {
-						console.log(key +" , "+ val);
-						if(key == "error") {
-							Badresponse = true;
-							responseMessage = val;
-						} else {
-							sessionStorage.setItem("PersonalizedEcard", val);
-							console.log("saving image");
-						}
-					});
-
-					if(Badresponse) {
-						console.log(responseMessage);
-					}
-
-					
-				},
-				error: function( jqXhr, textStatus, errorThrown ){
-					console.log( errorThrown );
-				}
-			})
-			
-			
-			
-			
-			/*
-			$.post( ImageAPI,   // url
-				   jsonString, // data to be submit
-				   function(data, status, jqXHR) {// success callback
-						console.log('status: ' + status + ', data: ' + data);
-					},
-					"json");
-							*/
-		}, false);
-        reader.addEventListener('error', () => {
-            console.error(`Error occurred reading file: ${file.name}`);
-        });
-		reader.readAsDataURL(file); // Converting file into data URL
-	}
 
 		
 	self.initialize = function(event) {
@@ -2411,12 +2335,20 @@ $(document).ready(function(){
 		var formdata = $("#Form").serializeArray();
 
 		var jsonstring = "{";
-		
+		var errorMessage = ""
 		var invalidatedForm = false;
 		$(formdata).each(function(i, field){
-			if(invalidatedForm ||!field.value || /^\s*$/.test(field.value)) {
+			if(!field.value || /^\s*$/.test(field.value)) {
 				invalidatedForm = true;
-				
+				errorMessage += "Please fill in " +field.name+" the fields\n";
+			}
+			//console.log(field.name);
+			if(field.name.includes("email")) {
+				if(!validateEmail(field.value)) {
+					errorMessage += "Please make sure " +field.name+" has a correct email\n";
+					invalidatedForm = true;
+				}
+
 			}
 			jsonstring += "\""+field.name +"\": \""+field.value + "\"";
 			//console.log(i + " " +  formdata.length);
@@ -2429,7 +2361,7 @@ $(document).ready(function(){
 		jsonstring += "}";
 
 		if(invalidatedForm) {
-				alert("Please fill in all the fields");
+				alert(errorMessage);
 				return;
 		}
 		
@@ -2505,7 +2437,13 @@ console.log("view is found");
 
 		event.stopImmediatePropagation();
 	}
-
+function validateEmail(email) 
+    {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+    
+//console.log(validateEmail('anystring@anystring.anystring.aaa'));
 	/**
 	 * Cross fade between views
 	 **/

@@ -7,8 +7,8 @@
 <title>InputDetails</title>
 <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/InputDetails.css"/>
 <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/WebBase.css"/>
-<script src="script/jquery-3.6.0.min.js"></script>
-<script id="applicationScript" type="text/javascript" src="script/InputDetails.js"></script>
+<script src="../script/jquery-3.6.0.min.js"></script>
+<script id="applicationScript" type="text/javascript" src="../script/InputDetails.js"></script>
 </head>
 <body>
 <div id="BaseBody">
@@ -57,16 +57,6 @@
 					</svg>
 					<input type="text" id="InputBox" name="recipient_email" placeholder="Fill in here">
 				</div>
-				<div id="Photo" class="TextInput">
-					<div id="InputTitle" >
-						<label for="SenderPhoto">Sender's Photo:</label><br>
-					</div>
-					<!--<svg class="InputRect"> 
-						<rect id="InputRect">
-						</rect>
-					</svg>--->
-					<input type="file" onchange="application.uploadFiles(event)" accept="image/gif, image/jpeg, image/png" id="InputBox" name="SenderPhoto" placeholder="Fill in here">
-				</div>
 				
 
 				<div id="Greetings">
@@ -99,7 +89,7 @@
 			<rect id="FooterImage" rx="0" ry="0" x="0" y="0" width="1920" height="200">
 			</rect>
 		</svg>
-		<img id="download" src="images/download.png" srcset="images/download.png 1x, images/download@2x.png 2x">
+		<img id="download" src="../images/download.png" srcset="../images/download.png 1x, ../images/download@2x.png 2x">
 			
 	</div>
 	<div id="Header" class="Header">

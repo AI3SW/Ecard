@@ -2,13 +2,6 @@
 // INITIALIZATION
 ///////////////////////////////////////
 
-
-/**
- * Global Variable
- * Code subject to change.
- **/
-	var cardsArray = [];
-
 /**
  * Functionality for scaling, showing by media query, and navigation between multiple pages on a single page. 
  * Code subject to change.
@@ -89,11 +82,65 @@ var Application = function() {
 	this.refreshContentSize = null;
 	this.refreshCheckContent = false;
 	this.refreshCheckContentSize = false;
-	
 
+	this.Imgstr = "";
+	this.uploadFiles = null;
 	
 	var self = this;
+	
+	self.PhotoAjax = function(event) {
+		
+		
+	}
+$(document).ready(function(){
+	
+	var EcardId = sessionStorage.getItem('SelectedEcardID');
+	console.log(EcardId);
+	var EcardImgstr = sessionStorage.getItem('SelectedEcardImgstr');
+	console.log(EcardImgstr);
+	$('#Scroll_Group_2_').prepend('<img id="EcardTemplate" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
+});
 
+	var stringData;
+	self.uploadFiles = function(event) {
+		//var preview = document.querySelector('#InputBox'); // Image reference
+		
+		
+		var file = document.querySelector('input[type=file]').files[0];  // File refrence
+		
+		var reader = new FileReader(); // Creating reader instance from FileReader() API
+
+		reader.addEventListener("load", function () { // Setting up base64 URL on image
+			//preview.src = reader.result;
+			//this.Imgstr = reader.result;
+			//console.log(reader.result);
+
+
+			stringData = reader.result.split(",");
+			$('#Scroll_Group_2_').prepend('<img id="PhotoOutput" <img src="data:image/png;base64,'+stringData[1]+'"> </div>');
+			console.log(stringData);
+			//const obj = {name: "John", age: 30, city: "New York"};
+
+			
+			
+			
+			
+			/*
+			$.post( ImageAPI,   // url
+				   jsonString, // data to be submit
+				   function(data, status, jqXHR) {// success callback
+						console.log('status: ' + status + ', data: ' + data);
+					},
+					"json");
+							*/
+		}, false);
+        reader.addEventListener('error', () => {
+            console.error(`Error occurred reading file: ${file.name}`);
+        });
+		reader.readAsDataURL(file); // Converting file into data URL
+	}
+
+		
 	self.initialize = function(event) {
 		var view = self.getVisibleView();
 		var views = self.getVisibleViews();
@@ -162,40 +209,8 @@ var Application = function() {
 
 		//"addEventListener" in window ? null : window.addEventListener = window.attachEvent;
 		//"addEventListener" in document ? null : document.addEventListener = document.attachEvent;
-		
-				
-
-		
-		/*
-		<div onclick="application.goToTargetView(event)" id="Component_2__1" class="Component_2___1">
-				<img id="birthday-04-2016" src="images/birthday-04-2016.png" srcset="images/birthday-04-2016.png 1x, images/birthday-04-2016@2x.png 2x">
-					
-			</div>
-		*/
-		
-		
 	}
-	
-	$(document).ready(function(){
-		var method;
-		var versionAPI = "http://10.2.1.153:5001/version";
-		$.getJSON( versionAPI, function( data ) {
-		  console.log( "JSON Data version: " + data );
-		});
-		
-		var cardsAPI = "http://10.2.1.153:5001/cards";
-		$.getJSON( cardsAPI, function( data ) {
-			console.log( "JSON Data cards: " + data.cards.length);
-			cardsArray = data.cards;
-		  $.each( cardsArray, function( key, val ) {
-			  
-				$('.Ecards-container').append('<div onclick="application.goToTargetView(event,'+(val.id-1)+')" class="EcardsImages"> <img src="data:image/png;base64,'+val.img+'"> </div>');
-			});
-			console.log(cardsArray);
-			$("#ecard_media_style").text("@media (max-width: 353px) {  .EcardsImages {    flex: 100%;  }}");
-		});
 
-	});
 
 	///////////////////////////////////////
 	// AUTO REFRESH 
@@ -219,13 +234,7 @@ var Application = function() {
 	self.requestRefreshUpdate = function() {
 		var url = document.location.href;
 		var protocol = window.location.protocol;
-		///Get version
-
-		//console.log(url);
-		
-		//goes to the onclick 
-		//localStorage.setItem('bookedStatus' + customerId, true);
-		
+		var method;
 		
 		try {
 
@@ -389,6 +398,8 @@ var Application = function() {
 				self.log("Could not get last modified date from the server");
 			}
 		}
+		
+
 	}
 
 	self.refreshUpdatedPage = function() {
@@ -2141,7 +2152,6 @@ var Application = function() {
 	 */
 	self.getCSSPropertyValueForElement = function(id, property) {
 		var styleSheets = document.styleSheets;
-		console.log(styleSheets);
 		var numOfStylesheets = styleSheets.length;
 		var values = [];
 		var selectorIDText = "#" + id;
@@ -2356,7 +2366,7 @@ var Application = function() {
 	/**
 	 * Go to the view in the event targets CSS variable
 	 */
-	self.goToTargetView = function(event,id) {
+	self.goToTargetView = function(event) {
 		var button = event.currentTarget;
 		var buttonComputedStyles = getComputedStyle(button);
 		var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
@@ -2366,17 +2376,59 @@ var Application = function() {
 		var targetState = targetView ? self.getStateNameByViewId(targetView.id) : null;
 		var actionTargetStyles = targetView ? targetView.style : null;
 		var state = self.viewsDictionary[actionTargetValue];
-		//console.log(id);
-		//console.log(cardsArray);
-		sessionStorage.setItem("SelectedEcardID", id);
-		sessionStorage.setItem("SelectedEcardImgstr", cardsArray[id].img);
+
+		
+		var ImageAPI = "http://10.2.1.153:5001/image";
+		var EcardId = parseInt(sessionStorage.getItem('SelectedEcardID'))+1;
+		var jsonString = "{ \"card_id\" : \""+EcardId+"\" , \"img\": \""+stringData[1]+"\"}";
+		//console.log(jsonString);
+		var dataLength = JSON.stringify(jsonString).length;
+		
+		$.ajax({
+			url: ImageAPI,
+			dataType: 'json',
+			type: 'POST',
+			contentType: 'application/json',
+			header: {
+				'Content-Length': dataLength
+			},
+			data: jsonString,
+			processData: false,
+			success: function( receiveddata, textStatus, jQxhr ){
+				console.log('status: ' + status + ', data: ' + receiveddata);
+				
+				var Badresponse = false;
+				var responseMessage;
+				$.each( receiveddata, function( key, val ) {
+					console.log(key +" , "+ val);
+					if(key == "error") {
+						Badresponse = true;
+						responseMessage = val;
+					} else {
+						sessionStorage.setItem("PersonalizedEcard", val);
+						console.log("saving image");
+					}
+				});
+
+				if(Badresponse) {
+					console.log(responseMessage);
+				}
+
+				
+			},
+			error: function( jqXhr, textStatus, errorThrown ){
+				console.log( errorThrown );
+			}
+		})
+	   
 		// navigate to page
+		//console.log( $( this ).serializeArray() );
 		if (self.application==false || targetType=="page") {
-			//console.log("../" + actionTargetValue);
 			document.location.href = "./" + actionTargetValue;
 			return;
 		}
 
+console.log("view is found");
 		// if view is found
 		if (targetView) {
 

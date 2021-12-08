@@ -1,0 +1,121 @@
+.mediaViewInfo {
+	--web-view-name: HomePage;
+	--web-view-id: HomePage;
+	--web-scale-on-resize: true;
+	--web-refresh-for-changes: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: HomePage;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#ScrollView {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 100%;
+	height: 70%;
+	left: 0;
+	top: 15%;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+#ScrollContent {
+	position: absolute;
+	width: 100%;
+	height: 1507px;
+	top: 5%;
+	overflow: visible;
+	margin: 0 auto;
+}
+
+.Ecards-container {
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 30px;
+	text-align: center;
+	top : 50%;
+	center : 0;
+	width : 100%;
+	height : 60%;
+}
+
+.Ecards-MainInfo {
+	position: absolute;
+	width : 100%;
+	height : 40%;
+
+	
+}
+.EcardsImages {
+	height: width;
+	left: 0px;
+	overflow: visible;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: PhotoPreview.html;
+	cursor: pointer;
+	flex: 33%;
+	padding : 20px;
+}
+
+#ecard-nobg1 {
+	position: absolute;
+	width: auto;
+	height: 100%;
+	left: 0;
+	top: 20px;
+	overflow: visible;
+}
+.RightInfo {
+	right: 0;
+	width: 50%;
+	height: 100%;
+	border:0;
+}
+#Create_your_own_personalized_F {
+	position: absolute;
+	right: 5%;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 50%;
+word-wrap: break-word;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3.4vw;
+	color: rgba(0,0,0,1);
+}
+#LoremIpsumLoremIpsumLorem_Ipsu {
+	right:  5%;
+	top: 30vh;
+	width: 45%;
+	position: absolute;
+	overflow: visible;
+
+word-wrap: break-word;
+	text-align: right;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 2vw;
+	color: rgba(112,112,112,1);
+}
