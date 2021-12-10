@@ -5,59 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InputDetails</title>
-<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/InputDetails.css"/>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/PhotoPreview.css"/>
 <link rel="stylesheet" type="text/css" id="applicationStylesheet" href="css/WebBase.css"/>
-<script src="script/jquery-3.6.0.min.js"></script>
-<script id="applicationScript" type="text/javascript" src="script/InputDetails.js"></script>
+<script src="../script/jquery-3.6.0.min.js"></script>
+<script id="applicationScript" type="text/javascript" src="../script/PhotoPreview.js"></script>
 </head>
 <body>
 <div id="BaseBody">
 	<div id="Scroll_Group_2_">
+	
 		<form id="Form">
 			<div id="Form_ba">		
-
-				<div id="Sender" class="TextInput">
-					<div id="InputTitle">
-						<label for="sender_name">Sender:</label><br>
-					</div>
-					<svg class="InputRect">
-						<rect id="InputRect">
-						</rect>
-					</svg>
-					<input type="text" id="InputBox" name="sender_name" placeholder="Fill in here">
-				</div>
-				
-				<div id="SenderMail" class="TextInput">
-					<div id="InputTitle">
-						<label for="sender_email">Sender's Mail:</label><br>
-					</div>
-					<svg class="InputRect">
-						<rect id="InputRect">
-						</rect>
-					</svg>
-					<input type="text" id="InputBox" name="sender_email" placeholder="Fill in here">
-				</div>
-				<div id="Recipient" class="TextInput">
-					<div id="InputTitle">
-						<label for="recipient_name">Recipient:</label><br>
-					</div>
-					<svg class="InputRect">
-						<rect id="InputRect">
-						</rect>
-					</svg>
-					<input type="text" id="InputBox" name="recipient_name" placeholder="Fill in here">
-				</div>
-				<div id="RecipientMail" class="TextInput">
-					<div id="InputTitle">
-						<label for="recipient_email">Recipient's Mail:</label><br>
-					</div>
-					<svg class="InputRect">
-						<rect id="InputRect">
-						</rect>
-					</svg>
-					<input type="text" id="InputBox" name="recipient_email" placeholder="Fill in here">
-				</div>
-				<div id="Photo" class="TextInput">
+				<div id="Photo" class="FileInput">
 					<div id="InputTitle" >
 						<label for="SenderPhoto">Sender's Photo:</label><br>
 					</div>
@@ -66,31 +25,18 @@
 						</rect>
 					</svg>--->
 					<input type="file" onchange="application.uploadFiles(event)" accept="image/gif, image/jpeg, image/png" id="InputBox" name="SenderPhoto" placeholder="Fill in here">
-				</div>
-				
 
-				<div id="Greetings">
-					<div id="GreetingsInputTitle">
-						<label for="message">Greeting Message:</label>
-					</div>
-					<svg class="GreetingsInputRect">
-						<rect id="GreetingsInputRect" >
+				</div>
+				<div  id="Submit" onclick="application.goToTargetView(event)">
+
+					<svg class="SubmitRect">
+						<rect id="SubmitRect" >
 						</rect>
 					</svg>
-					<input type="textarea" id="GreetingsInputBox" name="message" placeholder="Fill in here">
-					
-					<div  id="Submit" onclick="application.goToTargetView(event)">
-
-						<svg class="SubmitRect">
-							<rect id="SubmitRect" >
-							</rect>
-						</svg>
-						<div id="Submit_BtnText">
-							Submit
-						</div>
+					<div id="Submit_BtnText">
+						Fill in<br>e-mail details
 					</div>
 				</div>
-
 			</div>
 		</form>
 	</div>

@@ -25,16 +25,7 @@
 	}
 
 }
-#ScrollView {
-	mix-blend-mode: normal;
-	position: absolute;
-	width: 100%;
-	height: 70%;
-	left: 0;
-	top: 15%;
-	overflow: hidden;
-	overflow-y: scroll;
-}
+
 #ScrollContent {
 	position: absolute;
 	width: 100%;

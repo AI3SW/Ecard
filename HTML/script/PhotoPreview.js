@@ -98,7 +98,7 @@ $(document).ready(function(){
 	console.log(EcardId);
 	var EcardImgstr = sessionStorage.getItem('SelectedEcardImgstr');
 	console.log(EcardImgstr);
-	$('#Scroll_Group_2_').prepend('<img id="EcardTemplate" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
+	$('#ViewBody').prepend('<img id="EcardTemplate" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
 });
 
 	var stringData;
@@ -117,8 +117,9 @@ $(document).ready(function(){
 
 
 			stringData = reader.result.split(",");
-			$('#Scroll_Group_2_').prepend('<img id="PhotoOutput" <img src="data:image/png;base64,'+stringData[1]+'"> </div>');
-			console.log(stringData);
+
+			console.log( ("#PhotoOutput").length );
+			$("#PhotoOutput").attr("src","data:image/png;base64,"+stringData[1]);
 			//const obj = {name: "John", age: 30, city: "New York"};
 
 			
@@ -2407,6 +2408,12 @@ $(document).ready(function(){
 					} else {
 						sessionStorage.setItem("PersonalizedEcard", val);
 						console.log("saving image");
+												// navigate to page
+						//console.log( $( this ).serializeArray() );
+						if (self.application==false || targetType=="page") {
+							document.location.href = "./" + actionTargetValue;
+							return;
+						}
 					}
 				});
 
@@ -2421,14 +2428,7 @@ $(document).ready(function(){
 			}
 		})
 	   
-		// navigate to page
-		//console.log( $( this ).serializeArray() );
-		if (self.application==false || targetType=="page") {
-			document.location.href = "./" + actionTargetValue;
-			return;
-		}
-
-console.log("view is found");
+		//console.log("view is found");
 		// if view is found
 		if (targetView) {
 
