@@ -37,8 +37,6 @@
 
 .Ecards-container {
 	position: relative;
-	display: flex;
-	flex-wrap: wrap;
 	font-size: 30px;
 	text-align: center;
 	top : 0px;
@@ -56,6 +54,7 @@
 .EcardsImages {
 		position :relative;
 	width : 100vw;
+	max-width : 100vw;
 	height: auto;
 	left: 0px;
 	overflow: visible;
@@ -63,7 +62,6 @@
 	--web-action-type: page;
 	--web-action-target: PhotoPreview.html;
 	cursor: pointer;
-	flex: 33%;
 
 }
 

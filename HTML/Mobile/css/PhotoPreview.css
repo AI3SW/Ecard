@@ -101,7 +101,7 @@
 	--web-action-type: page;
 	--web-action-target: InputDetails.html;
 	cursor: pointer;
-	margin : 10px auto;
+	margin : 1vh auto;
 	
 }
 #SubmitRect {
@@ -191,6 +191,7 @@ max-width: 150px;
 	height: auto;
 
 	overflow: visible;
+	padding-bottom : 20vh;
 }
 #InputBox {
 	position: relative;

@@ -189,7 +189,7 @@ var Application = function() {
 			cardsArray = data.cards;
 		  $.each( cardsArray, function( key, val ) {
 			  
-				$('.Ecards-container').append('<div onclick="application.goToTargetView(event,'+(val.id-1)+')" class="EcardsImages"> <img src="data:image/png;base64,'+val.img+'"> </div>');
+				$('.Ecards-container').append('<img onclick="application.goToTargetView(event,'+(val.id-1)+')" class="EcardsImages" src="data:image/png;base64,'+val.img+'" ></img>');
 			});
 			console.log(cardsArray);
 			$("#ecard_media_style").text("@media (max-width: 353px) {  .EcardsImages {    flex: 100%;  }}");

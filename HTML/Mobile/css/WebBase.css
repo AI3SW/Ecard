@@ -14,7 +14,7 @@
 	mix-blend-mode: normal;
 	position: absolute;
 	width: 100vw;
-	height: 92.5vh;
+	height: auto;
 	left: 0;
 	top: 7.5vh;
 	overflow: hidden;
