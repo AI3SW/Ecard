@@ -30,7 +30,7 @@
 	position: absolute;
 	width: 100%;
 	height: 1507px;
-	top: 5%;
+	top: 0%;
 	overflow: visible;
 	margin: 0 auto;
 }
@@ -71,7 +71,7 @@
 	width: auto;
 	height: 100%;
 	left: 0;
-	top: 20px;
+	top: 0px;
 	overflow: visible;
 }
 .RightInfo {
@@ -83,7 +83,7 @@
 #Create_your_own_personalized_F {
 	position: absolute;
 	right: 5%;
-	top: 0px;
+	top: 5vh;
 	position: absolute;
 	overflow: visible;
 	width: 50%;

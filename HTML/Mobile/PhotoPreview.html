@@ -12,8 +12,8 @@
 </head>
 <body>
 <div id="BaseBody">
-	<div id="Scroll_Group_2_">
-	
+	<div id="ViewBody">
+
 		<form id="Form">
 			<div id="Form_ba">		
 				<div id="Photo" class="FileInput">
@@ -27,6 +27,7 @@
 					<input type="file" onchange="application.uploadFiles(event)" accept="image/gif, image/jpeg, image/png" id="InputBox" name="SenderPhoto" placeholder="Fill in here">
 
 				</div>
+				<img id="PhotoOutput" img src=""> </div>
 				<div  id="Submit" onclick="application.goToTargetView(event)">
 
 					<svg class="SubmitRect">
@@ -39,16 +40,10 @@
 				</div>
 			</div>
 		</form>
-	</div>
-	<div id="FooterGroup" class="FooterGroup">
-		<svg class="FooterImage">
-			<rect id="FooterImage" rx="0" ry="0" x="0" y="0" width="1920" height="200">
-			</rect>
-		</svg>
-		<img id="download" src="../images/download.png" srcset="../images/download.png 1x, ../images/download@2x.png 2x">
 			
 	</div>
 	<div id="Header" class="Header">
+			
 		<svg class="HeaderImage">
 			<rect id="HeaderImage" rx="0" ry="0" x="0" y="0" width="1920" height="200">
 			</rect>
@@ -57,8 +52,9 @@
 			E cards Portal
 		</div>
 		<div id="E_cards_Portal_SubHeader">
-			Input Details
+			Selecting your Ecard
 		</div>
+		<img id="download" src="../images/download.png" srcset="../images/download.png 1x, ../images/download@2x.png 2x">
 	</div>
 </div>
 </body>

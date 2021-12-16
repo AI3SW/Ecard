@@ -92,7 +92,7 @@ $(document).ready(function(){
 	console.log(EcardId);
 	var EcardImgstr = sessionStorage.getItem('PersonalizedEcard');
 	//console.log(EcardImgstr);
-	$('#ViewBody').append('<img id="EcardTemplate" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
+	$('#ViewBody').prepend('<img id="EcardTemplate" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
 });
 
 		

@@ -14,9 +14,9 @@
 	mix-blend-mode: normal;
 	position: absolute;
 	width: 100vw;
-	height: 70vh;
+	height: 92.5vh;
 	left: 0;
-	top: 15vh;
+	top: 7.5vh;
 	overflow: hidden;
 	overflow-y: scroll;
 }
@@ -49,8 +49,8 @@
 }
 #download {
 	position: absolute;
-	width: 30vh;
-	height: 15vh;
+	width: auto;
+	height: 7.5vh;
 	right: 0px;
 	bottom: 0px;
 	overflow: visible;
@@ -58,7 +58,7 @@
 #Header {
 	position: absolute;
 	width: 100vw;
-	height: 15vh;
+	height: 7.5vh;
 	left: 0px;
 	top: 0px;
 	overflow: visible;
@@ -70,14 +70,15 @@
 	stroke-linejoin: miter;
 	stroke-linecap: butt;
 	stroke-miterlimit: 4;
-	width: 100%;
-	height: 100%;
+	width: 100vw; 
+	height: 7.5vh;
 }
+
 .HeaderImage {
 	position: absolute;
 	overflow: visible;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 7.5vh;
 	left: 0px;
 	top: 0px;
 }
@@ -98,8 +99,8 @@
 	color: rgba(255,255,255,1);
 }
 #E_cards_Portal_SubHeader {
-	right: 5%;
-	bottom: 20%;
+	right: 20vh;
+	bottom: 18%;
 
 	position: absolute;
 	overflow: visible;

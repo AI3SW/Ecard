@@ -45,24 +45,23 @@
 
 }
 #Form {
-	position: absolute;
-	width: 40vw;
-	height: 70vh;
-	right: 5vw;
+	position: relative;
+	width: 100vw;
+	height: auto;
 	top: 10px;
 	overflow: visible;
 }
 #Form_ba {
-	position: absolute;
-	width: 50vw;
-	height: 70vh;
+	position: relative;
+	width: 100vw;
+	height: auto;
 	left: 0px;
 	top: 0px;
 	overflow: visible;
 }
 #EcardTemplate {
 	display: block;
-	width: 50vw;
+	width: 100vw;
 	height: auto;
 
 	overflow: visible;
@@ -94,17 +93,16 @@
 }
 
 #Submit {
-	position: absolute;
-	height: 5vw;
-	width: 5vw;
-	bottom : 5vh;
-	left : 0vw;
+	position: relative;
+	height: 12vw;
+	width: 12vw;
 	overflow: visible;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
 	--web-action-target: InputDetails.html;
 	cursor: pointer;
-		margin-left : 1vw;
+	margin : 10px auto;
+	
 }
 #SubmitRect {
 	fill: rgba(255,255,255,1);
@@ -124,38 +122,37 @@ max-height: 150px;
 max-width: 150px;
 }
 .SubmitRect {
-	position: absolute;
+	position: relative;
 	overflow: visible;
 	width:inherit;
 	height:inherit;
 
 }
 #Submit_BtnText {
-	top: 0px;
-	left: 0px;
-	position: absolute;
+	position: relative;
+	top : -75%;
 	overflow: visible;
-	width:inherit;
-	padding: 30% 0px;
+	width: inherit;
+	height: inherit;
+	margin: auto auto;
 	white-space: nowrap;
-	text-align: left;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 0.7vw;
+	font-size: 1.5vw;
+	min-font-size : 1.5vw;
 	color: rgba(0,0,0,0.98);
 	text-align : center;
-	vertical-align : center;
-	width:inherit;
-	height:inherit;
+
 
 }
 
 .FileInput{
-	position: absolute;
-	width: 15vw;
-	height: 12vh;
+	position: relative;
+	width: 40vw;
+	height: auto;
 	overflow: visible;
+	margin : auto auto;
 }
 #Sender {
 
@@ -183,29 +180,25 @@ max-width: 150px;
 
 }
 #Photo {
-	left: 0vw;
 	top: 0vh;
-		margin-left: 1vw;
+
 
 }
 #PhotoOutput {
-	position : absolute;
+	position : relative;
 	top: 0vh;
-	right: 0vw;
-	margin-left: 1vw;
-	width: auto;
-	height: 70vh;
+	width: 100vw;
+	height: auto;
 
 	overflow: visible;
 }
 #InputBox {
-	position: absolute;
-	width: 90%;
-	height: 40%;
-	left: 5%;
-	bottom: 5%;
+	position: relative;
+	width: 25vw;
+	height: auto;
 	overflow: visible;
-	font-size: 0.9vw;
+	font-size: 2vw;
+	margin : auto auto;
 }
 #InputRect {
 	fill: rgba(255,255,255,1);
@@ -232,20 +225,18 @@ max-width: 150px;
 	bottom: 0px;
 }
 #InputTitle {
-	left: 0px;
-	top: 0px;
-	position: absolute;
+	position: relative;
 	overflow: visible;
-	width: 72px;
 	white-space: nowrap;
 	text-align: left;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 1.5vw;
+	font-size: 2.5vw;
 	color: rgba(0,0,0,0.98);
 	width: 50%;
-	height: 40%;
+	height: auto;
+	margin : auto auto;
 }
 #Greetings {
 	left: 0;

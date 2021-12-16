@@ -25,46 +25,38 @@
 	}
 
 }
-#ScrollView {
-	mix-blend-mode: normal;
-	position: absolute;
-	width: 100%;
-	height: 70%;
-	left: 0;
-	top: 15%;
-	overflow: hidden;
-	overflow-y: scroll;
-}
+
 #ScrollContent {
 	position: absolute;
 	width: 100%;
-	height: 1507px;
-	top: 5%;
+	height: auto;
+	top: 0%;
 	overflow: visible;
 	margin: 0 auto;
 }
 
 .Ecards-container {
-	position: absolute;
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	font-size: 30px;
 	text-align: center;
-	top : 50%;
-	center : 0;
-	width : 100%;
-	height : 60%;
+	top : 0px;
+	width : 100vw;
+	height : auto;
 }
 
 .Ecards-MainInfo {
-	position: absolute;
+	position: relative;
 	width : 100%;
-	height : 40%;
+	height : auto;
 
 	
 }
 .EcardsImages {
-	height: width;
+		position :relative;
+	width : 100vw;
+	height: auto;
 	left: 0px;
 	overflow: visible;
 	--web-animation: fadein 0.3s ease-out;
@@ -72,15 +64,15 @@
 	--web-action-target: PhotoPreview.html;
 	cursor: pointer;
 	flex: 33%;
-	padding : 20px;
+
 }
 
 #ecard-nobg1 {
-	position: absolute;
-	width: auto;
-	height: 100%;
+	position: relative;
+	width: 100vw;
+	height: auto;
 	left: 0;
-	top: 20px;
+	
 	overflow: visible;
 }
 .RightInfo {
@@ -90,32 +82,74 @@
 	border:0;
 }
 #Create_your_own_personalized_F {
-	position: absolute;
-	right: 5%;
+	position: relative;
+	left: 0px;
 	top: 0px;
-	position: absolute;
 	overflow: visible;
-	width: 50%;
-word-wrap: break-word;
+	width: 100%;
+	height: 50px;
+	word-wrap: break-word;
 	text-align: left;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 3.4vw;
+	font-size: 5vw;
+	margin : 2vh 2vw;
+	margin-left : 5px;
 	color: rgba(0,0,0,1);
 }
 #LoremIpsumLoremIpsumLorem_Ipsu {
-	right:  5%;
-	top: 30vh;
-	width: 45%;
-	position: absolute;
+	left:  0px;
+	top: 0px;
+	width: 90vw;
+	height : 100px;
+	position: relative;
 	overflow: visible;
+	margin : 0px 2vw;
+
 
 word-wrap: break-word;
 	text-align: right;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 2vw;
+		font-size: 3.5vw;
 	color: rgba(112,112,112,1);
+}
+#EcardHeader {
+	fill: rgba(0,15,165,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	width: 100vw; 
+	height: 5vh;
+	margin-bottom :2vh;
+}
+
+.EcardHeader {
+	position: absolute;
+	overflow: visible;
+	width: 100vw;
+	height: 5vh;
+	left: 0px;
+	top: 0px;
+	margin-bottom :2vh;
+}
+#E_cards_SelectionTitle {
+	bottom: 20%;
+	position: relative;
+	overflow: visible;
+	width : 100vw;
+	height : 3vh;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vw;
+	color: rgba(255,255,255,1);
+	margin :1vh 3vw;
+		margin-bottom :2vh;
 }
