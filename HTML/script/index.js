@@ -24,10 +24,10 @@ $(document).ready(function(){
 	
 	
 	if(UA_includesMobile) {
-		window.location.replace('/Ecard/HTML/Mobile/HomePage.html');
+		window.location.replace('./Ecard/Mobile/HomePage.html');
 		console.log("going to mobile");
 	} else {
-		window.location.replace('/Ecard/HTML/Desktop/HomePage.html');
+		window.location.replace('./Ecard/Desktop/HomePage.html');
 		console.log("going to desktop");
 	}
 
