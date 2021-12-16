@@ -44,7 +44,7 @@
 	top : 50%;
 	center : 0;
 	width : 100%;
-	height : 60%;
+	height : auto;
 }
 
 .Ecards-MainInfo {
@@ -55,7 +55,8 @@
 	
 }
 .EcardsImages {
-	height: width;
+	max-width : 50vw;
+	height: auto;
 	left: 0px;
 	overflow: visible;
 	--web-animation: fadein 0.3s ease-out;
@@ -64,6 +65,7 @@
 	cursor: pointer;
 	flex: 33%;
 	padding : 20px;
+	margin : auto auto;
 }
 
 #ecard-nobg1 {
