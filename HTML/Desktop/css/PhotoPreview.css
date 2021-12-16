@@ -46,16 +46,16 @@
 }
 #Form {
 	position: absolute;
-	width: 40vw;
-	height: 70vh;
-	right: 5vw;
-	top: 10px;
+	width: 50vw;
+	height: 15vh;
+	left: 50vw;
+	bottom: 0px;
 	overflow: visible;
 }
 #Form_ba {
 	position: absolute;
 	width: 50vw;
-	height: 70vh;
+	height: 15vh;
 	left: 0px;
 	top: 0px;
 	overflow: visible;
@@ -98,7 +98,7 @@
 	height: 5vw;
 	width: 5vw;
 	bottom : 5vh;
-	left : 0vw;
+	right : 20vw;
 	overflow: visible;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
@@ -191,10 +191,9 @@ max-width: 150px;
 #PhotoOutput {
 	position : absolute;
 	top: 0vh;
-	right: 0vw;
-	margin-left: 1vw;
+	left: 50vw;
 	width: auto;
-	max-width : 50vw;
+	height : 50vh;
 
 	overflow: visible;
 }
