@@ -27,12 +27,10 @@
 }
 
 #ScrollContent {
-	position: absolute;
+	position: relative;
 	width: 100%;
 	height: auto;
-	top: 0%;
 	overflow: visible;
-	margin: 0 auto;
 }
 
 .Ecards-container {
@@ -48,7 +46,6 @@
 	position: relative;
 	width : 100%;
 	height : auto;
-
 	
 }
 .EcardsImages {
@@ -84,34 +81,34 @@
 	left: 0px;
 	top: 0px;
 	overflow: visible;
-	width: 100%;
-	height: 50px;
+	width: 80%;
+	height: 8vh;
 	word-wrap: break-word;
 	text-align: left;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 5vw;
-	margin : 2vh 2vw;
-	margin-left : 5px;
+
 	color: rgba(0,0,0,1);
 }
 #LoremIpsumLoremIpsumLorem_Ipsu {
 	left:  0px;
 	top: 0px;
 	width: 90vw;
-	height : 100px;
+	height : calc(5vh+150px);
 	position: relative;
 	overflow: visible;
 	margin : 0px 2vw;
 
 
-word-wrap: break-word;
+	word-wrap: break-word;
 	text-align: right;
 	font-family: Segoe UI;
 	font-style: normal;
 	font-weight: normal;
-		font-size: 3.5vw;
+	font-size: 3.5vw;
+
 	color: rgba(112,112,112,1);
 }
 #EcardHeader {
@@ -133,7 +130,6 @@ word-wrap: break-word;
 	height: 5vh;
 	left: 0px;
 	top: 0px;
-	margin-bottom :2vh;
 }
 #E_cards_SelectionTitle {
 	bottom: 20%;

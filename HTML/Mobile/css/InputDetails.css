@@ -145,7 +145,7 @@ max-width: 150px;
 .TextInput{
 	position: relative;
 	width: 100vw;
-	height: 10vh;
+	height: calc(75px + 5vh);
 	overflow: visible;
 	margin : 1vh 0;
 }
@@ -167,13 +167,13 @@ max-width: 150px;
 
 
 #InputBox {
-	position: absolute;
+	position: relative;
 	width: 80%;
-	height: 40%;
-	left: 10%;
-	bottom: 5%;
+	height: 46%;
 	overflow: visible;
 	font-size: 2.5vw;
+	left : 10%;
+	top : -60%;
 }
 #InputRect {
 
@@ -193,19 +193,18 @@ max-width: 150px;
 
 }
 .InputRect {
-	position: absolute;
+	position: relative;
 	overflow: visible;
 	width: 95%;
-	height: 50%;
+	height: 60%;
 	left: 2.5%;
-	bottom: 0px;
+
 }
 #InputTitle {
-	left: 0px;
+	left: 1%;
 	top: 0px;
-	position: absolute;
+	position: relative;
 	overflow: visible;
-	width: 72px;
 	white-space: nowrap;
 	text-align: left;
 	font-family: Segoe UI;
@@ -214,21 +213,22 @@ max-width: 150px;
 	font-size: 3vw;
 	color: rgba(0,0,0,0.98);
 	width: 50%;
-	height: 40%;
+	height: 30%;
+	padding-bottom : 10px;
 }
 #Greetings {
 	position: relative;
 	width: 100vw;
-	height: 24vh;
+	height: calc(200px + 5vh);
 	overflow: visible;
 	margin-top : 2vh;
 }
 #GreetingsInputBox {
-	position: absolute;
-	width: 90%;
+	position: relative;
+	width: 85%;
 	height: 70%;
-	left: 5%;
-	bottom: 4%;
+	left: 7.25%;
+	top: -77.5%;
 	overflow: visible;
 	font-size: 2.5vw;
 	margin : auto auto;
@@ -248,7 +248,7 @@ max-width: 150px;
 
 }
 .GreetingsInputRect {
-	position: absolute;
+	position: relative;
 	overflow: visible;
 	width: 95%;
 	height: 80%;
@@ -257,11 +257,10 @@ max-width: 150px;
 	 vertical-align: top;
 }
 #GreetingsInputTitle {
-	left: 0px;
+	left: 1%;
 	top: 0px;
-	position: absolute;
+	position: relative;
 	overflow: visible;
-	width: 72px;
 	white-space: nowrap;
 	text-align: left;
 	font-family: Segoe UI;
@@ -271,4 +270,5 @@ max-width: 150px;
 	color: rgba(0,0,0,0.98);
 	width: 50%;
 	height: 15%;
+	padding-bottom : 10px;
 }

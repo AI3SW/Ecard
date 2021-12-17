@@ -50,6 +50,7 @@
 	height: auto;
 	top: 10px;
 	overflow: visible;
+	padding-bottom : 2vh;
 }
 #Form_ba {
 	position: relative;
@@ -94,8 +95,8 @@
 
 #Submit {
 	position: relative;
-	height: 12vw;
-	width: 12vw;
+	height:  13vw ;
+	width: 13vw;
 	overflow: visible;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
@@ -118,8 +119,8 @@
 	width:inherit;
 	height:inherit;
 
-max-height: 150px;
-max-width: 150px;
+max-height: 12vw;
+max-width: 12vw;
 }
 .SubmitRect {
 	position: relative;
@@ -191,7 +192,6 @@ max-width: 150px;
 	height: auto;
 
 	overflow: visible;
-	padding-bottom : 20vh;
 }
 #InputBox {
 	position: relative;
