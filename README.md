@@ -23,7 +23,7 @@ Choice of deployment was to serve HTML files using an Nginx server hosted on an 
     ```
     server {
         listen <IP_ADDRESS>:<PORT_NO>;
-        root <DEPLOYMENT_DIRECTORY>;
+        root <DEPLOYMENT_DIRECTORY>/Ecard;
 
         location / {
 
