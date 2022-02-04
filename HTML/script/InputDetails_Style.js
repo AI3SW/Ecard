@@ -83,15 +83,11 @@ var Application = function() {
 	this.refreshCheckContent = false;
 	this.refreshCheckContentSize = false;
 
-
-$(document).ready(function(){
-	var EcardImgstr = sessionStorage.getItem('PersonalizedEcard');
-	console.log(EcardImgstr);
-	$('#Group_cg').prepend('<img id="PreviewImage" <img src="data:image/png;base64,'+EcardImgstr+'"> </div>');
-});
-
+	this.Imgstr = "";
+	
 	var self = this;
 
+		
 	self.initialize = function(event) {
 		var view = self.getVisibleView();
 		var views = self.getVisibleViews();
@@ -349,6 +345,8 @@ $(document).ready(function(){
 				self.log("Could not get last modified date from the server");
 			}
 		}
+		
+
 	}
 
 	self.refreshUpdatedPage = function() {
@@ -2312,67 +2310,9 @@ $(document).ready(function(){
 		}
 	}
 
-	/**
-	 * Go to the view in the event targets CSS variable
-	 */
-	self.goToTargetView = function(event) {
-		var button = event.currentTarget;
-		var buttonComputedStyles = getComputedStyle(button);
-		var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
-		var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
-		var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
-		var targetView = self.application ? null : self.getElement(actionTargetValue);
-		var targetState = targetView ? self.getStateNameByViewId(targetView.id) : null;
-		var actionTargetStyles = targetView ? targetView.style : null;
-		var state = self.viewsDictionary[actionTargetValue];
-		
-		// navigate to page
-		if (self.application==false || targetType=="page") {
-			document.location.href = "./" + actionTargetValue;
-			return;
-		}
 
-		// if view is found
-		if (targetView) {
-
-			if (self.currentOverlay) {
-				self.removeOverlay(false);
-			}
-
-			if (self.showByMediaQuery) {
-				var stateName = targetState;
-				
-				if (stateName==null || stateName=="") {
-					var initialView = self.getInitialView();
-					stateName = initialView ? self.getStateNameByViewId(initialView.id) : null;
-				}
-				self.showMediaQueryViewsByState(stateName, event);
-				return;
-			}
-
-			// add animation set in event target style declaration
-			if (animation && self.supportAnimations) {
-				self.crossFade(self.currentView, targetView, false, animation);
-			}
-			else {
-				self.setViewVariables(self.currentView);
-				self.hideViews();
-				self.enableMediaQuery(state.rule);
-				self.scaleViewIfNeeded(targetView);
-				self.centerView(targetView);
-				self.updateViewLabel();
-				self.updateURL();
-			}
-		}
-		else {
-			var stateEvent = new Event(self.STATE_NOT_FOUND);
-			self.stateName = name;
-			window.dispatchEvent(stateEvent);
-		}
-
-		event.stopImmediatePropagation();
-	}
-
+    
+//console.log(validateEmail('anystring@anystring.anystring.aaa'));
 	/**
 	 * Cross fade between views
 	 **/

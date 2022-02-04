@@ -176,26 +176,7 @@ var Application = function() {
 		
 	}
 	
-	$(document).ready(function(){
-		var method;
-		var versionAPI = "http://10.2.1.153:5001/version";
-		$.getJSON( versionAPI, function( data ) {
-		  console.log( "JSON Data version: " + data );
-		});
-		
-		var cardsAPI = "http://10.2.1.153:5001/cards";
-		$.getJSON( cardsAPI, function( data ) {
-			console.log( "JSON Data cards: " + data.cards.length);
-			cardsArray = data.cards;
-		  $.each( cardsArray, function( key, val ) {
-			  
-				$('.Ecards-container').append('<img onclick="application.goToTargetView(event,'+(val.id-1)+')" class="EcardsImages" src="data:image/png;base64,'+val.img+'" ></img>');
-			});
-			console.log(cardsArray);
-			$("#ecard_media_style").text("@media (max-width: 353px) {  .EcardsImages {    flex: 100%;  }}");
-		});
 
-	});
 
 	///////////////////////////////////////
 	// AUTO REFRESH 
@@ -2353,70 +2334,7 @@ var Application = function() {
 		}
 	}
 
-	/**
-	 * Go to the view in the event targets CSS variable
-	 */
-	self.goToTargetView = function(event,id) {
-		var button = event.currentTarget;
-		var buttonComputedStyles = getComputedStyle(button);
-		var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
-		var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
-		var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
-		var targetView = self.application ? null : self.getElement(actionTargetValue);
-		var targetState = targetView ? self.getStateNameByViewId(targetView.id) : null;
-		var actionTargetStyles = targetView ? targetView.style : null;
-		var state = self.viewsDictionary[actionTargetValue];
-		//console.log(id);
-		//console.log(cardsArray);
-		sessionStorage.setItem("SelectedEcardID", id);
-		sessionStorage.setItem("SelectedEcardImgstr", cardsArray[id].img);
-		// navigate to page
-		if (self.application==false || targetType=="page") {
-			//console.log("../" + actionTargetValue);
-			document.location.href = "./" + actionTargetValue;
-			return;
-		}
 
-		// if view is found
-		if (targetView) {
-
-			if (self.currentOverlay) {
-				self.removeOverlay(false);
-			}
-
-			if (self.showByMediaQuery) {
-				var stateName = targetState;
-				
-				if (stateName==null || stateName=="") {
-					var initialView = self.getInitialView();
-					stateName = initialView ? self.getStateNameByViewId(initialView.id) : null;
-				}
-				self.showMediaQueryViewsByState(stateName, event);
-				return;
-			}
-
-			// add animation set in event target style declaration
-			if (animation && self.supportAnimations) {
-				self.crossFade(self.currentView, targetView, false, animation);
-			}
-			else {
-				self.setViewVariables(self.currentView);
-				self.hideViews();
-				self.enableMediaQuery(state.rule);
-				self.scaleViewIfNeeded(targetView);
-				self.centerView(targetView);
-				self.updateViewLabel();
-				self.updateURL();
-			}
-		}
-		else {
-			var stateEvent = new Event(self.STATE_NOT_FOUND);
-			self.stateName = name;
-			window.dispatchEvent(stateEvent);
-		}
-
-		event.stopImmediatePropagation();
-	}
 
 	/**
 	 * Cross fade between views
