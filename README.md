@@ -1,7 +1,7 @@
 =======
 # Ecard
 
-## How to Deploy
+## How to Deploy Backend
 
 Choice of deployment was to serve HTML files using an Nginx server hosted on an Ubuntu machine.
 
@@ -40,16 +40,18 @@ Choice of deployment was to serve HTML files using an Nginx server hosted on an 
 
 5. Check that the website is served at `<IP_ADDRESS>:<PORT_NO>`
 
-6. Ecard Frontend
+## How to Deploy Frontend
+
+1. Ecard Frontend
 Open the page via a browser on the file index.html in the root folder, it will automatically redirect users based on the screen resolution.
 
-7. Installing of the webpages
+2. Installing of the webpages
 Just download the repo to a place where webpages can be hosted
 
-8. Configuring the Backend
+3. Configuring the Backend
 Go to /HTML/SCRIPT/config.js to change the IP and port of where the AI backend server is hosted.
 
-9. UI Frontend architecture
+4. UI Frontend architecture
 
 To help with offloading different kinds of platform
 
