@@ -1,4 +1,3 @@
-=======
 # Ecard
 
 ## How to Deploy Backend
@@ -59,6 +58,7 @@ The css and html of the
 PC based devices are pushed and found in the "HTML/Desktop/" folder
 Mobile base devices are pushed and found in the "HTML/Mobile/" folder
 
-10. Demo Video
+## Demo Videos
+
 Mobile version Demo [![Ecards Demo video](https://res.cloudinary.com/marcomontalbano/image/upload/v1644200527/video_to_markdown/images/youtube--jQlLydD78Rs-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/jQlLydD78Rs "Ecards Demov")
 Desktop version Demo [![Ecards Demo video](https://res.cloudinary.com/marcomontalbano/image/upload/v1644200753/video_to_markdown/images/youtube--VkYwTEMU7zg-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/VkYwTEMU7zg "Ecards Demo video")
