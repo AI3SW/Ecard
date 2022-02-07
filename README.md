@@ -1,4 +1,33 @@
-# Ecard
+# ai_greeting_cards_unity
+
+## Demo Videos
+
+### Mobile version Demo
+
+[![Ecards Demo video](https://res.cloudinary.com/marcomontalbano/image/upload/v1644200527/video_to_markdown/images/youtube--jQlLydD78Rs-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/jQlLydD78Rs "Ecards Demov")
+
+### Desktop version Demo
+
+[![Ecards Demo video](https://res.cloudinary.com/marcomontalbano/image/upload/v1644200753/video_to_markdown/images/youtube--VkYwTEMU7zg-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/VkYwTEMU7zg "Ecards Demo video")
+
+## How to Deploy Frontend
+
+1. Ecard Frontend
+Open the page via a browser on the file index.html in the root folder, it will automatically redirect users based on the screen resolution.
+
+2. Installing of the webpages
+Just download the repo to a place where webpages can be hosted
+
+3. Configuring the Backend
+Go to /HTML/SCRIPT/config.js to change the IP and port of where the AI backend server is hosted.
+
+4. UI Frontend architecture
+
+To help with offloading different kinds of platform
+
+The css and html of the
+PC based devices are pushed and found in the "HTML/Desktop/" folder
+Mobile base devices are pushed and found in the "HTML/Mobile/" folder
 
 ## How to Deploy Backend
 
@@ -38,32 +67,3 @@ Choice of deployment was to serve HTML files using an Nginx server hosted on an 
     ```
 
 5. Check that the website is served at `<IP_ADDRESS>:<PORT_NO>`
-
-## How to Deploy Frontend
-
-1. Ecard Frontend
-Open the page via a browser on the file index.html in the root folder, it will automatically redirect users based on the screen resolution.
-
-2. Installing of the webpages
-Just download the repo to a place where webpages can be hosted
-
-3. Configuring the Backend
-Go to /HTML/SCRIPT/config.js to change the IP and port of where the AI backend server is hosted.
-
-4. UI Frontend architecture
-
-To help with offloading different kinds of platform
-
-The css and html of the
-PC based devices are pushed and found in the "HTML/Desktop/" folder
-Mobile base devices are pushed and found in the "HTML/Mobile/" folder
-
-## Demo Videos
-
-### Mobile version Demo
-
-[![Ecards Demo video](https://res.cloudinary.com/marcomontalbano/image/upload/v1644200527/video_to_markdown/images/youtube--jQlLydD78Rs-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/jQlLydD78Rs "Ecards Demov")
-
-### Desktop version Demo
-
-[![Ecards Demo video](https://res.cloudinary.com/marcomontalbano/image/upload/v1644200753/video_to_markdown/images/youtube--VkYwTEMU7zg-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/VkYwTEMU7zg "Ecards Demo video")
