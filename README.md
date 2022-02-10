@@ -1,4 +1,4 @@
-# ai_greeting_cards_unity
+# ai_greeting_cards_frontend
 
 ## Demo Videos
 
